@@ -41,9 +41,13 @@ public class StudentEntity{
         this.createAt = createAt;
     }
     public void StudentEntity(){
-        this.password = password;
-    }
-    public Date getCreateAt(){
         
+    }
+    public StudentEntity(Integer id,String name,String email,String creatAt){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.creatAt = creatAt; 
     }
 }
