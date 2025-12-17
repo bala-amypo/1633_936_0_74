@@ -29,5 +29,16 @@ public class StudentEntity{
     public String getPassword(){
         return password;
     }
-    public void setP
+    public void setPassword(String password){
+        this.password = password;
+    }
+    public Date getCreateAt(){
+        return CreacteAt;
+    }
+    public void setCreateAt(Date creatAt){
+        this.createAt = createAt;
+    }
+    public void StudentEntity(){
+        
+    }
 }
