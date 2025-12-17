@@ -1,1 +1,9 @@
-package co.example.demo.controller
+package co.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.Restcontroller;
+
+import com.example.demo.service.StudentService;
+
+@Restcontroller
+public class Student
