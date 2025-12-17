@@ -6,5 +6,22 @@ public class StudentEntity{
     private String username;
     private String email;
     private String password;
-    privateSt
+    private String createAt;
+
+    public void setId(Integer){
+        this.id=id;
+    }
+    public Integer getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getEmail(){
+        return email;
+    }
+    
 }
