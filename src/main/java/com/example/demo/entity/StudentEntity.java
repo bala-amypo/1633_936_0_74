@@ -1,53 +1,117 @@
-package com.example.demo.entity
+package com.example.demo.controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService;
+@RestController
+public class StudentController{
+    @Autowired StudentService ser;
+    @PostMapping("/post")
+    public StudentEntity sendData(@RequestBody StudentEntity  stu){
+        return ser.postData(stu);
+    }
+}
 
-import java.
 
+package com.example.demo.entity;
+
+import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 @Entity
 public class StudentEntity{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private String username;
     private String email;
     private String password;
-    private String createAt;
-
-    public void setId(Integer){
-        this.id=id;
-    }
-    public Integer getId(){
+    private Date created;
+    public Integer getid(){
         return id;
     }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name = name;
+    public String getUsername(){
+        return username;
     }
     public String getEmail(){
         return email;
     }
-    public void setEmail(String email){
-        this.email = email;
-    }
     public String getPassword(){
         return password;
     }
+    public Date getCreated(){
+        return created;
+    }
+    public void setId(Integer id){
+        this.id=id;
+    }
+    public void setUsername(String username){
+        this.username=username;
+    }
+    public void setEmail(String email){
+        this.email=email;
+    }
     public void setPassword(String password){
-        this.password = password;
+        this.password=password;
     }
-    public Date getCreateAt(){
-        return CreacteAt;
+    public void setCreated(Date created){
+        this.created=created;
     }
-    public void setCreateAt(Date creatAt){
-        this.createAt = createAt;
+    public StudentEntity(Integer id,String username,String email,String password,Date created){
+        this.id=id;
+        this.username=username;
+        this.email=email;
+        this.password=password;
+        this.created=created;
     }
-    public void StudentEntity(){
-        
+    public StudentEntity(){
+
     }
-    public StudentEntity(Integer id,String name,String email,String creatAt){
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.creatAt = creatAt; 
+
+
+}
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.example.demo.entity.StudentEntity;
+@Repository
+public interface StudentRepo extends JpaRepository<StudentEntity,Integer>{
+
+}
+
+package com.example.demo.service.Impl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService;
+import com.example.demo.repository.StudentRepo;
+@Service
+
+public class StudentServiceImpl implements StudentService{
+    @Autowired StudentRepo student;
+    //save()
+    //findAll()
+    //findById()
+    //deleteById();
+    //existById();
+    @Override
+    public StudentEntity postData(StudentEntity stu){
+        //StudentEntity getData();
+        return student.save(stu);
     }
+}
+
+package com.example.demo.service;
+
+import com.example.demo.entity.StudentEntity;
+public interface StudentService{
+    StudentEntity postData(StudentEntity stu);
+        //StudentEntity getData();
+   
+
 }
