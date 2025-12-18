@@ -1,16 +1,16 @@
-package com.example.demo.controller;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.entity.StudentEntity;
-import com.example.demo.service.StudentService;
-@RestController
-public class StudentController{
-    @Autowired StudentService ser;
-    @PostMapping("/post")
-    public StudentEntity sendData(@RequestBody StudentEntity  stu){
-        return ser.postData(stu);
-    }
-}
+Package com.example.demo.services;
 
+import com.example.demo 
+import org.springframework.web.blind.annotation.GetMapping;
+@RestController
+public class Studentcontroller{
+@Autowired Studentservices services;
+@postMapping("/post")
+public StudentEntity postval(@RequestBody StudentEntity entity){
+    return services.postdata(entity);
+}
+@GetMapping("/get")
+public List<StudentEntity>getval(){
+    return services.getAllData()
+}
+}
