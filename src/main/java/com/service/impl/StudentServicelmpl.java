@@ -30,5 +30,8 @@ public String DeleteDtata(            )
 
 
 
-2Override
-public Student
+@Override
+public StudentEntity getData(int id){
+    return student.findById(id).orElse(null);
+
+}
