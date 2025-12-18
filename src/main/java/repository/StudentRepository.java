@@ -1,12 +1,32 @@
+
 package com.example.demo.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import org.sprinngframework.stereotype.Repository;
-
 import com.example.demo.entity.StudentEntity;
 @Repository
-public interface StudentRepository extends JpaRepository  <StudentEntity,Integer>{
+public interface StudentRepo extends JpaRepository<StudentEntity,Integer>{
 
+}
 
+package com.example.demo.service.Impl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService;
+import com.example.demo.repository.StudentRepo;
+@Service
+
+public class StudentServiceImpl implements StudentService{
+    @Autowired StudentRepo student;
+    //save()
+    //findAll()
+    //findById()
+    //deleteById();
+    //existById();
+    @Override
+    public StudentEntity postData(StudentEntity stu){
+        //StudentEntity getData();
+        return student.save(stu);
+    }
 }
