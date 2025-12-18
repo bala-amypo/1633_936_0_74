@@ -13,4 +13,5 @@ public StudentEntity postval(@RequestBody StudentEntity entity){
 public List<StudentEntity>getval(){
     return services.getAllData()
 }
+@Delete     
 }
