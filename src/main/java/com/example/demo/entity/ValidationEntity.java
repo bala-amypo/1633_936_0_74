@@ -8,5 +8,7 @@ public class ValidationEntity{
     private Long id;
     @NotNull
     private String username;
-    private String
+    private String email;
+    private String password;
+    private int age;
 }
