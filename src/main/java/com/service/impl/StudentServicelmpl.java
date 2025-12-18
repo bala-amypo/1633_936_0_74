@@ -8,4 +8,4 @@ public class Studentserverimpl implement StudentService{
     
 }
 @Override
-public String DeleteDtata
+public String DeleteDtata(            )
