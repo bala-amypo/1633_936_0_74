@@ -7,3 +7,5 @@ public class Studentserverimpl implement StudentService{
     
     
 }
+@Override
+public String DeleteDtata
