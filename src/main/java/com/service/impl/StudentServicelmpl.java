@@ -9,3 +9,26 @@ public class Studentserverimpl implement StudentService{
 }
 @Override
 public String DeleteDtata(            )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2Override
+public Student
