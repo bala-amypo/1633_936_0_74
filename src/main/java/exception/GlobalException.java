@@ -1,6 +1,6 @@
 package com.example.exception;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.ValidationEntity;
 import com.example.demo.repository.ValidationRepo;
