@@ -9,3 +9,10 @@ import com.example.demo.entity.TimeStampEntity;
 public interface TimeStampRepo extends JpaRepository<TimeStampEntity,Long>{
 
 }
+
+
+
+
+
+
+
