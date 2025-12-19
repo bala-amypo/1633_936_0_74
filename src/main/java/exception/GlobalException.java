@@ -1,12 +1,8 @@
 package com.example.exception;
 
-import org.springframework.http.;
-import org.springframework.stereotype.Service;
-import com.example.demo.entity.ValidationEntity;
-import com.example.demo.repository.ValidationRepo;
-import com.example.demo.service.ValidationService;
-import com.example.demo.exception.ValidationException;
-import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.
 
 @Service
 public class ValidationServiceImpl  implements ValidationService{
